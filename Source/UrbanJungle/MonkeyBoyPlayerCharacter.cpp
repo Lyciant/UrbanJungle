@@ -6,12 +6,14 @@
 // Sets default values
 AMonkeyBoyPlayerCharacter::AMonkeyBoyPlayerCharacter()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	// Set player0 to controll this class by default
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
+	// Setting Default Movement Force
+	ConstantMovementForce = 200.0f;
 
 }
 
@@ -40,6 +42,7 @@ void AMonkeyBoyPlayerCharacter::SetupPlayerInputComponent(UInputComponent* Playe
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMonkeyBoyPlayerCharacter::StartJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMonkeyBoyPlayerCharacter::StopJump);
 }
+
 
 
 // Set jump flag when key pressed

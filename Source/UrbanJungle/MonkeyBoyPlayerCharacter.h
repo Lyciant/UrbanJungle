@@ -16,8 +16,9 @@ public:
 	AMonkeyBoyPlayerCharacter();
 
 	UPROPERTY(EditAnywhere)
-	float ConstantMovementForce = 200.0f;
+	float ConstantMovementForce;
 
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Engine/TriggerBox.h"
+#include "Components/BoxComponent.h"
 #include "BuildingBase.generated.h"
 
 UCLASS()
@@ -25,9 +25,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// Creating components for blueprint edditing
-	UPROPERTY(BlueprintReadWrite)
-	UStaticMeshComponent* BuildingMeshComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	USceneComponent* BuildingMeshComponent;
 
-	UPROPERTY(BlueprintReadWrite)
-	ATriggerBox* BuildingTriggerComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UBoxComponent* BuildingTriggerBox;
 };
